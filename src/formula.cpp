@@ -154,7 +154,39 @@ vector<std::string> Formula::splitFormula(std::string& formula){
     return nextFormulas;
 
 }
-
+//First version only with double node split
 bool Formula::Validate(std::string& formula){
-    //TODO
+    std::vector<std::map<std::vector<int>, std::string>> tree;
+    std::vector<std::string> nextFormula;
+    std::map<std::vector<int>, std::string> nextNode;
+    std::map<std::vector<int>, std::string> firstNode;
+    std::map<std::vector<int>, std::string> ::iterator it = firstNode.begin();
+    firstNode.insert(it, std::pair<std::vector<int>, std::string>(0, formula));
+    tree.push_back(firstNode);
+    std::string formula1, formula2;
+    std::vector<int> nodeInfo1, nodeInfo2;
+    int nodeParent, nodeChild, treeHeight = 0;
+    while(!tree[-1].empty()){
+        if(tree[-1].size() > 1);
+        for(auto vctr: tree){
+            for(auto mp: vctr){
+                nextFormula = splitFormula(formula);
+                std::map<std::vector<int>, std::string>::iterator it = nextNode.end();
+                nodeInfo1.push_back(nodeParent);
+                nodeInfo1.push_back(nodeChild);
+                nodeInfo2.push_back(nodeParent);
+                nodeInfo2.push_back(nodeChild+1);
+                nextNode.insert(it, std::pair<std::vector<int>, std::string>(nodeInfo1, nextFormula[0]));
+                if (!nextFormula[1].empty()){
+                    nextNode.insert(it, std::pair<std::vector<int>, std::string>(nodeInfo2, nextFormula[1]));
+
+                }
+                tree.push_back(nextNode);
+                //to complete
+            }
+        } 
+
+        
+    }
+
 }

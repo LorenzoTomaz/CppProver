@@ -11,13 +11,14 @@ private:
     int pClose_{0};
     bool valid_;
     std::string formula_;
-    std::map<int, std::string> tree_;
+    std::vector<std::map<std::vector<int>, std::string>> tree_;
     std::vector<std::string> tree_vector_;
 
 public:
     Formula(std::string& formula, bool valid);
     //bool operator<(Formula& formula);
-    bool Validate(std::string& formula) ;
+    bool Validate(std::string& formula);
+    std::vector<std::map<std::vector<int>, std::string>> constructTree(std::string& formula);
     std::vector<std::string> splitFormula(std::string& formula);
     std::map<std::string, std::string> getMainOperator(std::string& formula);
     int getMainOperatorPosition(std::string& formula, int& label);

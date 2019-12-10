@@ -11,7 +11,7 @@ const std::string disjuntion{"|"};
 const std::string mimplication{">"};
 const std::string bimplication{"*"};
 const std::string pOpen{"("};
-const std::string pClose{"("};
+const std::string pClose{")"};
 
 };
 

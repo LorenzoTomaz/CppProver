@@ -1,3 +1,6 @@
+#ifndef FORMULA_H
+#define FORMULA_H
+
 #include <iostream>
 #include <vector>
 #include <map>
@@ -36,3 +39,4 @@ public:
 
 };
 
+#endif
